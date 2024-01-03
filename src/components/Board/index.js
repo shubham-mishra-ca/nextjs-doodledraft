@@ -30,17 +30,25 @@ const Board = () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
+        const beginPath = (x, y) => {
+            context.beginPath();
+            context.moveTo(x, y)
+        }
+
+        const drawLine = (x, y) => {
+            context.lineTo(x, y);
+            context.stroke();
+        }
+
         const handleMouseDown = (e) => {
             shouldDraw.current = true;
-            context.beginPath();
-            context.moveTo(e.clientX, e.clientY);
+            beginPath(e.clientX, e.clientY);
             
         }
  
         const handleMouseMove = (e) => {
             if(!shouldDraw.current) return
-            context.lineTo(e.clientX, e.clientY);
-            context.stroke();
+            drawLine(e.clientX, e.clientY);
         }
  
           const handleMouseUp = (e) => {
