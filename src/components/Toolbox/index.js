@@ -4,6 +4,8 @@ import styles from './index.module.css';
 import {COLORS, MENU_ITEMS} from '@/constants';
 import { changeColor, changeBrushSize } from '@/slice/toolboxSlice';
 
+import { socket } from '@/socket';
+
 
 
 const Toolbox = () => {
@@ -16,11 +18,14 @@ const Toolbox = () => {
 
     const updateBrushSize = (e) => {
        dispatch(changeBrushSize({item: activeMenuItems, size: e.target.value}))
+       socket.emit('changeConfig', {color, size: e.target.value})
     }
 
     const updateColor = (newColor) => {
         dispatch(changeColor({item: activeMenuItems, color: newColor}))
+        socket.emit('changeConfig', {color: newColor, size})
     }
+    
     return (<div className={styles.toolboxContainer}> 
         {showStrokeToolOption && <div className={styles.toolItem}>
             <h4 className={styles.toolText}>Stroke Color</h4>
