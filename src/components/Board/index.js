@@ -22,13 +22,25 @@ const Board = () => {
 
 
         if(actionMenuItem === MENU_ITEMS.DOWNLOAD){
-            const URL = canvas.toDataURL();
+            const context = canvasRef.current.getContext('2d');
+            const imageData = context.getImageData(0, 0, canvasRef.current.width, canvasRef.current.height);
+            const compositeOperation = context.globalCompositeOperation;
+            context.globalCompositeOperation = "destination-over";
+            context.fillStyle = "white";
+            context.fillRect(0,0,canvasRef.current.width,canvasRef.current.height);
+        
+            const URL = canvasRef.current.toDataURL();
+            context.clearRect (0,0,canvasRef.current.width,canvasRef.current.height);
+            context.putImageData(imageData, 0,0);
+            context.globalCompositeOperation = compositeOperation;
+        
             const anchor = document.createElement('a');
             anchor.href = URL;
             anchor.download = 'sketch.png';
             anchor.click();
+        }
 
-        } else if( actionMenuItem === MENU_ITEMS.UNDO || actionMenuItem === MENU_ITEMS.REDO){
+        else if( actionMenuItem === MENU_ITEMS.UNDO || actionMenuItem === MENU_ITEMS.REDO){
             if(historyPointer.current > 0 && actionMenuItem === MENU_ITEMS.UNDO) historyPointer.current -= 1
             if(historyPointer.current < drawHistory.current.length - 1 && actionMenuItem === MENU_ITEMS.REDO) historyPointer.current += 1
             const imageData = drawHistory.current[historyPointer.current];
