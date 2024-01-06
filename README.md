@@ -1,40 +1,118 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Doodledraft🎨: A Simplified [Excalidraw](https://excalidraw.com/) Clone
 
-## Getting Started
+Doodledraft is a React-based application that serves as a basic clone of the popular online whiteboarding tool, [Excalidraw](https://github.com/excalidraw/excalidraw). Designed to showcase frontend development skills, particularly in React, this project offers a simplified version of a collaborative drawing and diagramming web app.
 
-First, run the development server:
+**Live Demo** : View a live demo of Doodledraft here: [Doodledraft Live](https://nextjs-doodledraft.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Technology Stack Highlights
+
+- **React & Next.js**: Utilizes React for building the user interface, with Next.js for server-side rendering and routing.
+- **Real-Time Collaboration**: Implements WebSocket via Socket.io to allow real-time collaboration, simulating multi-user drawing experiences across different browser tabs.
+- **State Management**: Employs Redux Toolkit for efficient state management across React components.
+- **Styling & Icons**: Integrates Tailwind CSS for utility-first styling and Font Awesome for a wide range of icons.
+- **Canvas API**: Leverages the HTML5 Canvas API for drawing and rendering graphical elements.
+
+Doodledraft is an attempt to replicate the seamless drawing experience of Excalidraw while demonstrating significant web development concepts and technologies. Whether you're sketching diagrams, doodling, or collaborating in real-time, Doodledraft aims to provide a straightforward yet powerful drawing tool.
+
+## Features
+
+The Doodledraft editor supports:
+
+💯 Free & open-source.
+
+🎨 Infinite, canvas-based whiteboard.
+
+✍️ Hand-drawn like style.
+
+🏗️ Customizable.
+
+🖼️ Export to PNG.
+
+🔙 Undo / Redo.
+
+## Usage
+Here's a look at Doodledraft features in action:
+![Doodledraft features in action](https://i.imgur.com/Rij5fUK.gif)
+
+## Installation
+
+Follow these steps to set up and run Doodledraft on your local machine:
+
+### Prerequisites
+
+- Make sure you have [Node.js](https://nodejs.org/en/download/) installed on your machine. This project was built with Node.js version 14.x.
+
+- You will also need [npm](https://www.npmjs.com/get-npm) (which comes with Node.js) or [yarn](https://yarnpkg.com/getting-started/install) as the package manager.
+
+### Clone the Repository
+
+First, clone the repository to your local machine. You can do this by running the following command in your terminal:
+
+```sh
+git clone https://github.com/yourusername/doodledraft.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Replace `yourusername` with your GitHub username.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Install Dependencies
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Navigate to the project directory:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+cd doodledraft
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Then, install the project dependencies:
 
-## Learn More
+```sh
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Or, if you're using yarn:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Start the Server
 
-## Deploy on Vercel
+Finally, you can start the server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Or, if you're using yarn:
+
+```sh
+yarn dev
+```
+
+Now, Doodledraft should be running on `http://localhost:3000`.
+
+Please note that the actual commands and URLs might vary depending on the scripts defined in your [`package.json`](command:_github.copilot.openRelativePath?%5B%22package.json%22%5D "package.json") and the configuration of your project.
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+Don't forget to give the project a star! Thanks again!
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## Acknowledgements
+
+- [Excalidraw](https://github.com/excalidraw/excalidraw) for the initial inspiration.
+- [Node.js](https://nodejs.org/)
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Font Awesome](https://fontawesome.com/)
+
+
+
